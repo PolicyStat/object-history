@@ -1,4 +1,5 @@
 /* eslint-env node, browser, mocha */
+/* eslint no-unused-expressions: 0 */
 var expect,
     History;
 
@@ -70,7 +71,7 @@ describe("History", function () {
     });
 
     it("should not allow going back when at dawn of history", function () {
-        expect( history.back() ).to.be.false();
+        expect( history.backward() ).to.be.false;
         expect( history.position() ).to.equal(0);
         expect( history.get() ).to.deep.equal(origin);
     });
@@ -89,15 +90,15 @@ describe("History", function () {
     });
 
     it("should go back multiple times sequentially", function () {
-        expect( history.back() ).to.equal(1);
-        expect( history.back() ).to.equal(0);
+        expect( history.backward() ).to.equal(1);
+        expect( history.backward() ).to.equal(0);
         expect( history.get() ).to.deep.equal(origin);
     });
 
     it("should remove forward history when adding", function () {
         expect( history.add({initials: "EKS"}) ).to.equal(1);
         expect( history.length() ).to.equal(2);
-        expect( history.forward() ).to.be.false();
+        expect( history.forward() ).to.be.false;
         expect( history.get() ).to.deep.equal({initials: "EKS"});
     });
 });

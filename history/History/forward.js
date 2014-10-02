@@ -1,27 +1,28 @@
 module.exports = function () {
     var self = this,
         diff,
-        back,
-        apply;
+        apply,
+        fore;
 
-    if (self.changesetsBack.length === 0) {return false;}
+    if (self.changesetsFore.length === 0) {return false;}
 
     diff = require("changeset");
     apply = diff.apply;
 
-    back = apply(
-        self.changesetsBack.pop(),
+    fore = apply(
+        self.changesetsFore.pop(),
         self.last
     );
 
-    self.changesetsFore.push(
+    self.changesetsBack.push(
         diff(
-            back,
+            fore,
             self.last
         )
     );
 
-    self.last = back;
+    self.last = fore;
 
     return self.position();
+
 };

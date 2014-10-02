@@ -14,7 +14,7 @@ module.exports = function (obj) {
 
     self.last = clone(obj);
 
-    self.currentPosition ++;
+    self.changesetsFore = [];
 
     return self.position();
 };

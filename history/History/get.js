@@ -1,5 +1,4 @@
 var clone = require("udc");
-var diff = require("changeset");
 
 module.exports = function () {
     "use strict";
