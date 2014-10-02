@@ -14,7 +14,6 @@ For cloning, [UltraDeepClone](https://github.com/imbcmdth/UltraDeepClone). For d
 var History = require("object-history");
 var origin = {foo: "foo"};
 var history = History(origin);
-// 0
 
 history.get();
 // {foo: "foo"}
