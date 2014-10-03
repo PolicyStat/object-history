@@ -7,6 +7,7 @@ expect = require("chai").expect;
 History = require("..");
 
 describe("History", function () {
+    "use strict";
     var history,
         origin,
         kfir;
