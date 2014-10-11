@@ -43,22 +43,5 @@
     "changeset": "^0.1.0",
     "lodash": "^2.4.1",
     "udc": "^1.0.1"
-  },
-  "testling": {
-    "harness": "mocha",
-    "files": "test/*.js",
-    "browsers": [
-      "ie/8..latest",
-      "ff/latest",
-      "ff/nightly",
-      "chrome/latest",
-      "chrome/canary",
-      "opera/latest",
-      "opera/next",
-      "safari/latest",
-      "android/latest",
-      "iphone/latest",
-      "ipad/latest"
-    ]
   }
 }
