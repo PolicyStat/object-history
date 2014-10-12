@@ -35,8 +35,8 @@
     "load-grunt-tasks": "^0.6.0"
   },
   "dependencies": {
-    "changeset": "^0.1.0",
+    "changeset": "https://github.com/mightyiam/changeset/archive/ie8-compat.tar.gz",
     "lodash": "^2.4.1",
-    "udc": "^1.0.1"
+    "udc": "https://github.com/mightyiam/UltraDeepClone/archive/ie8-compat.tar.gz"
   }
 }

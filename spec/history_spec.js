@@ -1,24 +1,23 @@
-/* eslint-env node, browser, jasmine*/
-/* eslint no-unused-expressions: 0 */
-var H;
-
-H = require("..");
+/* eslint-env node, browser, jasmine */
 
 describe("History", function () {
     "use strict";
-    var h,
+    var History,
+        h,
         origin,
         kfir;
+
+    History = require("..");
 
     origin = {
         name: "Shahar"
     };
 
     it("Should error, not given an object when initializing", function () {
-        expect(function () {h = new H([]);}).toThrow();
+        expect(function () {h = new History([]);}).toThrow();
     });
 
-    h = new H(origin);
+    h = new History(origin);
 
     it("should be initialized with length of 1", function () {
         expect( h.length() ).toEqual(1);
