@@ -28,12 +28,12 @@ module.exports = function (grunt) {
             jsGlob: "history/**/*.js"
         },
 
-        test: {
-            jsGlob: "test/**/*.js"
+        spec: {
+            jsGlob: "spec/*spec.js"
         },
 
         all: {
-            jsFiles: "(<%= history.jsGlob %>|<%= test.jsGlob %>)"
+            jsFiles: "(<%= history.jsGlob %>|<%= spec.jsGlob %>)"
         },
 
         eslint: {
@@ -41,21 +41,21 @@ module.exports = function (grunt) {
                 config: ".eslintrc",
                 format: "tap"
             },
-            all: ["<%= history.jsGlob %>", "<%= test.jsGlob %>"]
+            all: ["<%= history.jsGlob %>", "<%= spec.jsGlob %>"]
         },
 
         watch: {
             js: {
-                files: ["<%= history.jsGlob %>", "<%= test.jsGlob %>"],
+                files: ["<%= history.jsGlob %>", "<%= spec.jsGlob %>"],
                 tasks: ["eslint", "karma:dev:run"]
             }
         },
 
         karma: {
             options: {
-                frameworks: ["browserify", "mocha"],
-                files: ["<%= test.jsGlob %>"],
-                preprocessors: {"test/**/*.js": ["browserify"]},
+                frameworks: ["browserify", "jasmine"],
+                files: ["<%= spec.jsGlob %>"],
+                preprocessors: {"spec/*spec.js": ["browserify"]},
                 browserify: {debug: true},
                 autoWatch: false,
                 logLevel: "DEBUG"
@@ -63,13 +63,15 @@ module.exports = function (grunt) {
             dev: {
                 reporters: "dots",
                 browsers: ["Firefox", "Chrome"],
-                background: true
+                background: true,
+                browserNoActivityTimeout: 0
             },
             continuous: {
                 singleRun: true,
                 browsers: Object.keys(karmaSauceLaunchers),
                 customLaunchers: karmaSauceLaunchers,
-                reporters: ["saucelabs"]
+                reporters: ["dots", "saucelabs"],
+                sauceLabs: {testName: "<%= pkg.name %>"}
             }
         }
     });
