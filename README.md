@@ -1,3 +1,5 @@
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/object-history.svg)](https://saucelabs.com/u/object-history)
+
 object-history
 ==============
 
