@@ -5,19 +5,91 @@ module.exports = function (grunt) {
     require("load-grunt-tasks")(grunt);
 
     var karmaSauceLaunchers = {
-        chrome: {
+        iphone: {
             base: "SauceLabs",
-            browserName: "chrome"
+            browserName: "iphone"
+        },
+        ipad: {
+            base: "SauceLabs",
+            browserName: "ipad"
+        },
+        android4dot4: {
+            base: "SauceLabs",
+            browserName: "android",
+            version: "4.4"
+        },
+        android4dot3: {
+            base: "SauceLabs",
+            browserName: "android",
+            version: "4.3"
+        },
+        android4dot2: {
+            base: "SauceLabs",
+            browserName: "android",
+            version: "4.2"
+        },
+        android4dot1: {
+            base: "SauceLabs",
+            browserName: "android",
+            version: "4.2"
         },
         firefox: {
             base: "SauceLabs",
             browserName: "firefox"
         },
+        firefoxDev: {
+            base: "SauceLabs",
+            browserName: "firefox",
+            version: "dev"
+        },
+        chrome: {
+            base: "SauceLabs",
+            browserName: "chrome"
+        },
+        chromeDev: {
+            base: "SauceLabs",
+            browserName: "chrome",
+            version: "dev"
+        },
+        ie6: {
+            base: "SauceLabs",
+            browserName: "internet explorer",
+            version: "6"
+        },
+        ie7: {
+            base: "SauceLabs",
+            browserName: "internet explorer",
+            version: "7"
+        },
         ie8: {
             base: "SauceLabs",
             browserName: "internet explorer",
             version: "8"
+        },
+        ie9: {
+            base: "SauceLabs",
+            browserName: "internet explorer",
+            version: "9"
+        },
+        ie10: {
+            base: "SauceLabs",
+            browserName: "internet explorer",
+            version: "10"
+        },
+        ie11: {
+            base: "SauceLabs",
+            browserName: "internet explorer",
+            version: "11"
+        },
+        opera: {
+            base: "SauceLabs",
+            browserName: "opera"
+        },
+        safari: {
+            base: "SauceLabs",
+            browserName: "safari"
         }
+
     };
 
     grunt.initConfig({
@@ -56,22 +128,21 @@ module.exports = function (grunt) {
                 frameworks: ["browserify", "jasmine"],
                 files: ["<%= spec.jsGlob %>"],
                 preprocessors: {"spec/*spec.js": ["browserify"]},
-                browserify: {debug: true},
                 autoWatch: false,
                 logLevel: "DEBUG"
             },
             dev: {
-                reporters: "dots",
+                browserify: {debug: true},
+                reporters: "progress",
                 browsers: ["Firefox", "Chrome"],
-                background: true,
-                browserNoActivityTimeout: 0
+                background: true
             },
             continuous: {
                 singleRun: true,
                 browsers: Object.keys(karmaSauceLaunchers),
                 customLaunchers: karmaSauceLaunchers,
-                reporters: ["dots", "saucelabs"],
-                sauceLabs: {testName: "<%= pkg.name %>"}
+                reporters: ["progress", "saucelabs"],
+                captureTimeout: 120000
             }
         }
     });
