@@ -129,7 +129,13 @@ module.exports = function (grunt) {
                 files: ["<%= spec.jsGlob %>"],
                 preprocessors: {"spec/*spec.js": ["browserify"]},
                 autoWatch: false,
-                logLevel: "DEBUG"
+                logLevel: "DEBUG",
+                sauceLabs: {
+                    connectOptions: {
+                        verbose: true,
+                        doctor: true
+                    }
+                }
             },
             dev: {
                 browserify: {debug: true},
