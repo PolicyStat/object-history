@@ -132,8 +132,7 @@ module.exports = function (grunt) {
                 logLevel: "DEBUG",
                 sauceLabs: {
                     connectOptions: {
-                        verbose: true,
-                        doctor: true
+                        verbose: true
                     }
                 }
             },
