@@ -146,6 +146,9 @@ module.exports = function (grunt) {
                 background: true
             },
             continuous: {
+                sauceLabs: {
+                    startConnect: false
+                },
                 singleRun: true,
                 browsers: Object.keys(karmaSauceLaunchers),
                 customLaunchers: karmaSauceLaunchers,
