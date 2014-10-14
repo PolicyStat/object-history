@@ -6,3 +6,4 @@ env:
     - SAUCE_USERNAME=object-history
 addons:
     - sauce_connect: true
+before_script: npm install -g grunt-cli
