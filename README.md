@@ -9,6 +9,10 @@ JavaScript Object history (undo/redo)
 
 For cloning, [UltraDeepClone](https://github.com/imbcmdth/UltraDeepClone). For diff/apply, [changeset](https://github.com/eugeneware/changeset).
 
+## Requirements
+
+Requires some shimmable ES5 stuff. Works in IE7 and IE8 with `es5-shim`.
+
 ## Usage
 
 ```
