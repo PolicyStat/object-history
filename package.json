@@ -41,6 +41,6 @@
     "udc": "^1.0.1"
   },
   "scripts": {
-      "test": "grunt karma:continuous"
+    "test": "grunt karma:continuous"
   }
 }
