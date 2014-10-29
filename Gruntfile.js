@@ -126,7 +126,10 @@ module.exports = function (grunt) {
         karma: {
             options: {
                 frameworks: ["browserify", "jasmine"],
-                files: ["<%= spec.jsGlob %>"],
+                files: [
+                    "node_modules/es5-shim/es5-shim.js",
+                    "<%= spec.jsGlob %>"
+                ],
                 preprocessors: {"spec/*spec.js": ["browserify"]},
                 autoWatch: false,
                 logLevel: "DEBUG",
