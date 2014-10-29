@@ -76,3 +76,9 @@ history.length;
 history.get(1); // Not yet implemented. Care to contribute?
 
 ```
+
+## Changelog
+
+### `v2.0.0`
+
+Now expects some ES5 things. See readme.
