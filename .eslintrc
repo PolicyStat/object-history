@@ -1,11 +1,5 @@
 {
-    "env": {
-        "browser": true,
+    env: {
         "node": true
-    },
-    "rules": {
-        "global-strict": [2, "never"],
-        "strict": true,
-        "no-unused-vars": [1]
     }
 }

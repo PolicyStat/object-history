@@ -2,8 +2,3 @@ language: node_js
 node_js:
     - '0.11'
     - '0.10'
-env:
-    - "SAUCE_USERNAME=object-history"
-addons:
-    sauce_connect: true
-before_script: "npm -g install grunt-cli"
