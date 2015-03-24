@@ -23,7 +23,7 @@ pkg.devDependencies = {
   'es5-shim': '^4.0.3',
   jasmine: '^2.2.0',
   lodash: '^2.4.1',
-  semistandard: '*',
+  standard: '*',
   watch: '^0.13.0'
 }
 pkg.dependencies = {
@@ -32,6 +32,7 @@ pkg.dependencies = {
   udc: '^1.0.1'
 }
 pkg.scripts = {
-  watch: 'watch "npm test"',
-  test: 'semistandard && jasmine'
+  lint: 'standard',
+  unit: 'jasmine',
+  test: 'npm run lint && npm run unit'
 }
