@@ -23,8 +23,7 @@ pkg.devDependencies = {
   'es5-shim': '^4.0.3',
   jasmine: '^2.2.0',
   lodash: '^2.4.1',
-  standard: '*',
-  watch: '^0.13.0'
+  standard: '*'
 }
 pkg.dependencies = {
   changeset: '^0.1.0',
