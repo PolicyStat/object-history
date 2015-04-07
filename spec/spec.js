@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 describe('History', function () {
   'use strict'
   var History
