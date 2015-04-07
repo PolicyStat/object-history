@@ -1,0 +1,6 @@
+require('./initialization')
+require('./prototype/length')
+require('./prototype/get')
+require('./prototype/add')
+require('./prototype/backward')
+require('./prototype/forward')

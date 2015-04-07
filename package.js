@@ -21,7 +21,8 @@ pkg.devDependencies = {
   policystat: '^1.2.2',
   mightyiam: '^1.1.5',
   'es5-shim': '^4.0.3',
-  jasmine: '^2.2.0',
+  mocha: '^2.2.1',
+  proclaim: '^3.2.0',
   lodash: '^2.4.1',
   standard: '*'
 }
@@ -32,6 +33,6 @@ pkg.dependencies = {
 }
 pkg.scripts = {
   lint: 'standard',
-  unit: 'jasmine',
+  unit: 'mocha test/unit',
   test: 'npm run lint && npm run unit'
 }
