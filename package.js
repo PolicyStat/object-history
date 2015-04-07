@@ -23,7 +23,6 @@ pkg.devDependencies = {
   'es5-shim': '^4.0.3',
   mocha: '^2.2.1',
   proclaim: '^3.2.0',
-  lodash: '^2.4.1',
   standard: '*'
 }
 pkg.dependencies = {
