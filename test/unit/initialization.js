@@ -26,10 +26,8 @@ describe('initialization', function () {
   })
 
   context('with a plain object', function () {
-    var origin = {name: 'Shahar'}
-    var history = new History(origin)
-
     it('initializes', function () {
+      var history = new History({})
       assert.isInstanceOf(history, History)
     })
   })
