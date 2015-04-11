@@ -17,7 +17,7 @@ Works in IE8 with `es5-shim`. Perhaps IE7, as well.
 Gives birth to instances
 
 * `initial` **{Object}**: The initial history point    
-* `options` **{Object}**: Optional [options](#options)    
+* `options` **{Object}**: Optional [options](#constructor-options)    
 
 ```js
 var History = require('object-history')
@@ -26,7 +26,7 @@ var history = new History(initial)
 ```
 
 
-## Constructor options
+#### Constructor options
 
 `limit`
   Optional. Provide a number of backwards history points to keep.
