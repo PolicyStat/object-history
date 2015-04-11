@@ -49,15 +49,6 @@ describe('#backward', function () {
         })
       })
     })
-    context('going back', function () {
-      var history = new History(MOCK_OBJECT)
-      history.add({})
-      assert.strictEqual(history.length(), 2)
-      history.backward()
-      it('does not change length', function () {
-        assert.strictEqual(history.length(), 2)
-      })
-    })
     context('when already called', function () {
       context('just now', function () {
         var history = new History(MOCK_OBJECT)

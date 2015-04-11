@@ -17,6 +17,7 @@ pkg.author = require('mightyiam').authorString
 pkg.license = ps.openSource.license.spdx
 pkg.copyright = ps.copyrightNotice
 pkg.devDependencies = {
+  'call-n-times': '^1.1.0',
   'auto-package': '^1.0.0',
   policystat: '^1.2.2',
   mightyiam: '^1.1.5',

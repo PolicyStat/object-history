@@ -31,8 +31,8 @@ describe('#add', function () {
         history.add(MOCK_OBJECT)
       })
     })
-    it('increments the return of #length', function () {
-      assert.strictEqual(history.length(), 2)
+    it('increments the return of #lengthBackward', function () {
+      assert.strictEqual(history.lengthBackward(), 1)
     })
   })
   context('when there is forward history', function () {
@@ -45,7 +45,7 @@ describe('#add', function () {
       })
     })
     it('removes forward points', function () {
-      assert.strictEqual(history.length(), 2)
+      assert.strictEqual(history.lengthForward(), 0)
       assert.throws(function () {
         history.forward()
       }, 'there is no point to go forward to')
