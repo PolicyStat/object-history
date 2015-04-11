@@ -27,6 +27,7 @@ pkg.devDependencies = {
   standard: '*'
 }
 pkg.dependencies = {
+  xtend: '^4.0.0',
   changeset: '^0.1.0',
   lodash: '^2.4.1',
   udc: '^1.0.1'
