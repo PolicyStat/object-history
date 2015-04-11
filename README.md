@@ -1,84 +1,64 @@
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/object-history.svg)](https://saucelabs.com/u/object-history)
+# object-history [![NPM version](https://badge.fury.io/js/object-history.svg)](http://badge.fury.io/js/object-history)  [![Build Status](https://travis-ci.org/PolicyStat/object-history.svg)](https://travis-ci.org/PolicyStat/object-history)  [![js-standard-style](https://raw.githubusercontent.com/feross/standard/master/badge.png)](https://github.com/feross/standard)
 
-object-history
-==============
-
-JavaScript Object history (undo/redo)
+JavaScript Object history
 
 ## Behind the scenes
 
 For cloning, [UltraDeepClone](https://github.com/imbcmdth/UltraDeepClone). For diff/apply, [changeset](https://github.com/eugeneware/changeset).
 
-## Requirements
+## Old browsers
 
-Requires some shimmable ES5 stuff. Works in IE7 and IE8 with `es5-shim`.
+Works in IE8 with `es5-shim`. Perhaps IE7, as well.
 
-## Usage
+## Constructor
 
+### [History](./lib/index.js#L22)
+
+Gives birth to instances
+
+* `initial` **{Object}**: The initial history point    
+* `options` **{Object}**: Optional [options](#options)    
+
+```js
+var History = require('object-history')
+var initial = {foo: 'bar', name: 'victoria'}
+var history = new History(initial)
 ```
 
-var History = require("object-history");
-var origin = {foo: "foo"};
-var history = History(origin);
 
-history.get();
-// {foo: "foo"}
+## Constructor options
 
-history.get() === origin;
-// false
+`limit`
+  Optional. Provide a number of backwards history points to keep.
+  Older than this number will be forgotten and hopefully their allocated memory will be reclaimed.
 
-// It was cloned with `udc`.
+## Methods
 
-history.add({foo: "bar"});
-// 1
+### [add](./lib/prototype/add.js#L20)
 
-history.get();
-// {foo: "bar"}
+* `obj` **{Object}**: The history point    
 
-history.backward();
-// 0
+Add a history point object
+### [backward](./lib/prototype/backward.js#L9)
 
-history.get();
-// {foo: "foo"}
 
-history.length
-// 2
+Go back one history point
+### [forward](./lib/prototype/forward.js#L9)
 
-history.position
-// 0
 
-history.back();
-// false
+Go forward one history point
+### [get](./lib/prototype/get.js#L12)
 
-history.get();
-// {foo: "foo"}
+* `returns` **{Object}**: "Current" history point  
 
-history.forward();
-// 1
+Get the "current" history point"
+### [lengthBackward](./lib/prototype/length-backward.js#L8)
 
-history.get();
-// {foo: "bar"}
+* `returns` **{Number}**: Number of history points backwards
+### [lengthForward](./lib/prototype/length-forward.js#L8)
 
-history.add({yad: "yad"});
-// 2
+* `returns` **{Number}**: Number of history points forward
 
-history.back(0);
-// 0
+## Copyright
 
-history.add({fab: "fab"});
-// 1
-
-history.length;
-// 2
-
-// `.add`ing removes forward history.
-
-history.get(1); // Not yet implemented. Care to contribute?
-
-```
-
-## Changelog
-
-### `v2.0.0`
-
-Now expects some ES5 things. See readme.
+Copyright © 2015 PolicyStat LLC

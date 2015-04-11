@@ -34,6 +34,7 @@ pkg.dependencies = {
 }
 pkg.scripts = {
   lint: 'standard',
+  doc: 'verb',
   unit: 'mocha test/unit',
-  test: 'npm run lint && npm run unit'
+  test: 'npm run lint && npm run doc && npm run unit'
 }
