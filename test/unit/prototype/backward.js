@@ -1,7 +1,6 @@
 /* eslint-env mocha */
 var History = require('../../..')
 var assert = require('proclaim')
-var NO_HISTORY_MESSAGE = 'no point to go back to'
 var MOCK_OBJECT = require('../mock-object')
 
 describe('#backward', function () {
@@ -11,7 +10,7 @@ describe('#backward', function () {
     it('throws', function () {
       assert.throws(function () {
         history.backward()
-      }, NO_HISTORY_MESSAGE)
+      }, 'There\'s no going backward')
     })
   })
   context('when there is a point to go back to', function () {

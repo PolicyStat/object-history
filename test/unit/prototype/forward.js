@@ -9,7 +9,7 @@ describe('#forward', function () {
     it('throws', function () {
       assert.throws(function () {
         history.forward()
-      }, 'there is no point to go forward to')
+      }, 'There\'s no going forward')
     })
   })
   context('when there is a point to go forward to', function () {
