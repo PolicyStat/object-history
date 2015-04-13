@@ -48,7 +48,7 @@ describe('#add', function () {
       assert.strictEqual(history.lengthForward(), 0)
       assert.throws(function () {
         history.forward()
-      }, 'there is no point to go forward to')
+      }, 'There\'s no going forward')
     })
   })
 })
