@@ -36,25 +36,35 @@ var history = new History(initial)
 
 ### [add](./lib/prototype/add.js#L20)
 
+Add a history point object
+
 * `obj` **{Object}**: The history point    
 
-Add a history point object
+```js
+history.add({
+  foo: 'bar',
+  bar: 'foo'
+})
+```
+
 ### [backward](./lib/prototype/backward.js#L9)
 
+Go back one history point](./lib/prototype/backward.js#L11)
 
-Go back one history point
 ### [forward](./lib/prototype/forward.js#L9)
 
-
 Go forward one history point
+
 ### [get](./lib/prototype/get.js#L12)
 
 * `returns` **{Object}**: "Current" history point  
 
-Get the "current" history point"
+Get the "current" history point
+
 ### [lengthBackward](./lib/prototype/length-backward.js#L8)
 
 * `returns` **{Number}**: Number of history points backwards
+
 ### [lengthForward](./lib/prototype/length-forward.js#L8)
 
 * `returns` **{Number}**: Number of history points forward
