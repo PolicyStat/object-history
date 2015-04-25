@@ -12,7 +12,7 @@ Works in IE8 with `es5-shim`. Perhaps IE7, as well.
 
 ## API
 
-### [.History](lib/index.js#L23)
+### [History](lib/index.js#L23)
 
 Gives birth to instances
 
