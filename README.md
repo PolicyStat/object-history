@@ -17,7 +17,8 @@ Works in IE8 with `es5-shim`. Perhaps IE7, as well.
 Gives birth to instances
 
 * `initial` **{Object}**: The initial history point    
-* `options` **{Object}**: `limit`: `{Number}` Remember this many backward points    
+* `options` **{Object}**  
+        - `limit` **{Number}**: Optional. Remember this many backward points
 
 ```js
 var History = require('object-history')
