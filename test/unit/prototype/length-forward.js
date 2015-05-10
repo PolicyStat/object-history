@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 var History = require('../../..')
 var assert = require('proclaim')
-var callNTimes = require('call-n-times')
+var times = require('lodash').times
 
 describe('#lengthForward', function () {
   context('initially', function () {
@@ -20,24 +20,24 @@ describe('#lengthForward', function () {
   })
   context('after going back two times', function () {
     var history = new History({})
-    callNTimes(function () {history.add({})}, 2)
-    callNTimes(function () {history.backward()}, 2)
+    times(2, function () {history.add({})})
+    times(2, function () {history.backward()})
     it('returns 2', function () {
       assert.strictEqual(history.lengthForward(), 2)
     })
   })
   context('after going back three times', function () {
     var history = new History({})
-    callNTimes(function () {history.add({})}, 3)
-    callNTimes(function () {history.backward()}, 3)
+    times(3, function () {history.add({})})
+    times(3, function () {history.backward()})
     it('returns 3', function () {
       assert.strictEqual(history.lengthForward(), 3)
     })
   })
   context('after going back ten times', function () {
     var history = new History({})
-    callNTimes(function () {history.add({})}, 10)
-    callNTimes(function () {history.backward()}, 10)
+    times(10, function () {history.add({})})
+    times(10, function () {history.backward()})
     it('returns 10', function () {
       assert.strictEqual(history.lengthForward(), 10)
     })

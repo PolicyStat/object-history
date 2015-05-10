@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 var History = require('../../..')
 var assert = require('proclaim')
-var callNTimes = require('call-n-times')
+var times = require('lodash').times
 
 describe('#lengthBackward', function () {
   context('initially', function () {
@@ -19,21 +19,21 @@ describe('#lengthBackward', function () {
   })
   context('after adding two points', function () {
     var history = new History({})
-    callNTimes(function () {history.add({})}, 2)
+    times(2, function () {history.add({})})
     it('returns 2', function () {
       assert.strictEqual(history.lengthBackward(), 2)
     })
   })
   context('after adding three points', function () {
     var history = new History({})
-    callNTimes(function () {history.add({})}, 3)
+    times(3, function () {history.add({})})
     it('returns 3', function () {
       assert.strictEqual(history.lengthBackward(), 3)
     })
   })
   context('after adding ten points', function () {
     var history = new History({})
-    callNTimes(function () {history.add({})}, 10)
+    times(10, function () {history.add({})})
     it('returns 10', function () {
       assert.strictEqual(history.lengthBackward(), 10)
     })
